@@ -52,6 +52,7 @@ public class Login extends AppCompatActivity {
         db = new MyDatabaseHalper(this);
 
 
+
         textViewSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,23 +77,31 @@ public class Login extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                         }else {
-                        // Check if the entered password matches the stored password
-                        if (password.equals(((User) user).getPassword())) {
-                            Toast.makeText(getApplicationContext(), "Password is correct", Toast.LENGTH_SHORT).show();
-                            if(user.getFullName().equals("false")){
-                                Intent intent = new Intent(getApplicationContext(), Client.class);
+                            if(user.getFullName().equals("fr") && password.equals(((User) user).getPassword())){
+                                Intent intent = new Intent(getApplicationContext(),AddCMND.class);
+                                intent.putExtra("idfour",user.getId());
                                 startActivity(intent);
                                 finish();
-                            }else {
-                                Intent intent = new Intent(getApplicationContext(), ScannerT.class);
-                                intent.putExtra("username", username);
-                                intent.putExtra("id_livreur",user.getId());
-                                startActivity(intent);
-                                finish();
+                            }else{
+                                if (password.equals(((User) user).getPassword())) {
+                                    Toast.makeText(getApplicationContext(), "Password is correct", Toast.LENGTH_SHORT).show();
+                                    if(user.getFullName().equals("false")){
+                                        Intent intent = new Intent(getApplicationContext(), Client.class);
+                                        intent.putExtra("idclient",user.getId());
+                                        startActivity(intent);
+                                        finish();
+                                    }else {
+                                        Intent intent = new Intent(getApplicationContext(), ScannerT.class);
+//                                        intent.putExtra("username", username);
+//                                        intent.putExtra("id_livreur",user.getId());
+                                        intent.putExtra("iduser",user.getId());
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Incorrect password", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Incorrect password", Toast.LENGTH_SHORT).show();
-                        }
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "All fields required", Toast.LENGTH_SHORT).show();

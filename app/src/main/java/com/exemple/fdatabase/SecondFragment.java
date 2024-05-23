@@ -108,7 +108,7 @@ public class SecondFragment extends Fragment {
                 layoutManager = new LinearLayoutManager(getContext());
                 recyclerView.setLayoutManager(layoutManager);
                 MyDatabaseHalper db = new MyDatabaseHalper(getContext());
-                listvec = db.getVecByID_LIVREUR(3);
+                listvec = db.getAllVECs();
                 myAdapter = new MyAdapterVec(listvec,getContext(),txt,dialog);
                 recyclerView.setAdapter(myAdapter);
                 selectedItem = txt.getText().toString();
@@ -120,7 +120,6 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext() , Select.class);
                 intent.putExtra("selectitem",selectedItem);
-
                 startActivity(intent);
             }
         });

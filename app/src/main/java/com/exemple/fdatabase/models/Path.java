@@ -4,6 +4,9 @@ public class Path {
     private String address;
     private String date;
 
+    public Path() {
+    }
+
     public Path(int id, String address, String date) {
         this.id = id;
         this.address = address;

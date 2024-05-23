@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/roboto_medium_italic"
         android:gravity="center"
         android:text="Sign Up"
         android:textColor="#582900"
-        android:textSize="80sp"
+        android:textSize="60sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,11 +50,22 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/userr"
                 android:drawableRight="@drawable/us"
+                android:fontFamily="@font/roboto_medium_italic"
                 android:textSize="16sp"
                 android:visibility="visible" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/RED"
+            android:textSize="14dp"
+            android:visibility="gone"
+            android:text="This username is already in use by someone else."
+            android:layout_marginLeft="20dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutEmail"
@@ -72,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/userr"
                 android:drawableRight="@drawable/mail"
+                android:fontFamily="@font/roboto_medium_italic"
                 android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -83,6 +95,7 @@
             android:layout_margin="10dp"
             android:gravity="center|left"
             android:hint="Password"
+            app:passwordToggleEnabled="true"
             android:textSize="16sp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -91,8 +104,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/userr"
-                android:drawableRight="@drawable/us"
-                android:textSize="16sp" />
+                android:fontFamily="@font/roboto_medium_italic"
+                android:inputType="textPassword"
+                android:textSize="16sp"
+                app:textInputLayoutFocusedRectEnabled="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,10 +121,11 @@
 
 
         <CheckBox
-            android:layout_marginTop="25dp"
             android:id="@+id/checkBox2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/roboto_medium_italic"
             android:text="Agent account ?" />
 
         <Button
@@ -133,11 +149,11 @@
         android:id="@+id/logintext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/roboto_medium_italic"
         android:gravity="center"
-        android:text="Already have an account? Login "
+        android:text="Already have an account?   Login "
         android:textColor="#582900"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -3,18 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/recai1">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutc"
-        android:layout_width="413dp"
-        android:layout_height="55dp"
+        android:layout_width="357dp"
+        android:layout_height="49dp"
         android:layout_marginTop="4dp"
+        android:background="@drawable/rectonglecycleview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/rectonglecycleview"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -28,29 +27,29 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.542" />
 
+
         <TextView
             android:id="@+id/cmndetat"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_marginEnd="96dp"
+            android:layout_marginEnd="52dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.542" />
-
+            app:layout_constraintVertical_bias="0.551" />
 
         <TextView
             android:id="@+id/cmndnom"
             android:layout_width="96dp"
             android:layout_height="34dp"
-            android:layout_marginEnd="264dp"
+            android:layout_marginEnd="212dp"
             android:text="TextView"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.476" />
+            app:layout_constraintVertical_bias="0.466" />
 
         <ImageView
             android:id="@+id/coliebtn"

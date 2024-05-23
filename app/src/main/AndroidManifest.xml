@@ -6,9 +6,13 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +24,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fdatabase"
         tools:targetApi="31">
+        <activity
+            android:name=".Aboutus"
+            android:exported="false" />
+        <activity
+            android:name=".Favoritelist"
+            android:exported="false" />
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Firee"
+            android:exported="false" />
+        <activity
+            android:name=".Uplodimage"
+            android:exported="false" />
+        <activity
+            android:name=".Addcolie"
+            android:exported="false" />
+        <activity
+            android:name=".AddCMND"
+            android:exported="false" />
+        <activity
+            android:name=".Savepictr"
+            android:exported="false" />
+        <activity
+            android:name=".Savepict"
+            android:exported="false" />
+        <activity
+            android:name=".Testmap"
+            android:exported="false" />
+        <activity
+            android:name=".Startliv"
+            android:exported="false" />
+        <activity
+            android:name=".Fournisseur"
+            android:exported="false" />
         <activity
             android:name=".Followpage"
             android:exported="false" />
@@ -70,6 +110,13 @@
             android:screenOrientation="portrait"
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBCeK2q7gJ5AnPPKNg2n4xSiSzx8U8Awyc" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

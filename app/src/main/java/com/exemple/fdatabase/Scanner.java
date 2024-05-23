@@ -33,6 +33,7 @@ import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import android.Manifest;
@@ -58,7 +59,7 @@ public class Scanner extends AppCompatActivity {
         setContentView(R.layout.activity_scanner);
         boolean select = getIntent().getBooleanExtra("select", false);
         String selectedItem = getIntent().getStringExtra("selectitem");
-
+        String todayedate = getTodaysDate();
         scanbtn = findViewById(R.id.scanbutton);
 
             scanbtn.setOnClickListener(v ->
@@ -95,12 +96,14 @@ public class Scanner extends AppCompatActivity {
                     datec = myview.findViewById(R.id.DateC);
                     newposition = myview.findViewById(R.id.newpostion);
                     fournisseur = myview.findViewById(R.id.fourni);
+
                     colieinf.setVisibility(View.VISIBLE);
                     cmndid.setVisibility(View.VISIBLE);
                     last_position.setVisibility(View.VISIBLE);
                     datec.setVisibility(View.VISIBLE);
                     newposition.setVisibility(View.VISIBLE);
                     fournisseur.setVisibility(View.VISIBLE);
+
                     colieinf.setText("Colie N° " + result.getContents());
                     cmndid.setText("ID cmnd" + colie.getCmndId());
                     datec.setText("Date " + colie.getDate());
@@ -108,6 +111,8 @@ public class Scanner extends AppCompatActivity {
                     newposition.setText("new position " + addressString2);
                     fourn = db.getFournisseurById(colie.getFournisseurId());
                     fournisseur.setText("fournisseur " + fourn.getNom());
+                    db.updateColieEtat(colie.getId(),getTodaysDate());
+                    db.updateCmdEtat(colie.getCmndId(),"liv2");
                     db.updateColieLastPosition(colie.getId(), addressString2);
                     myview.findViewById(R.id.buttonntf).setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -197,5 +202,47 @@ private void updateGPS(){
         });
     }
 
+    private String getTodaysDate()
+    {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month + 1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return makeDateString(day, month, year);
+    }
+    private String makeDateString(int day, int month, int year)
+    {
+        return getMonthFormat(month) + " " + day + " " + year;
+    }
+    private String getMonthFormat(int month)
+    {
+        if(month == 1)
+            return "JAN";
+        if(month == 2)
+            return "FEB";
+        if(month == 3)
+            return "MAR";
+        if(month == 4)
+            return "APR";
+        if(month == 5)
+            return "MAY";
+        if(month == 6)
+            return "JUN";
+        if(month == 7)
+            return "JUL";
+        if(month == 8)
+            return "AUG";
+        if(month == 9)
+            return "SEP";
+        if(month == 10)
+            return "OCT";
+        if(month == 11)
+            return "NOV";
+        if(month == 12)
+            return "DEC";
 
+        //default should never happen
+        return "JAN";
+    }
 }

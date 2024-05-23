@@ -40,6 +40,8 @@ public class MyAdapterVec extends RecyclerView.Adapter<MyAdapterVec.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.titre.setText(listvec.get(position).getNom());
+        holder.textView4.setVisibility(View.VISIBLE);
+        holder.textView4.setText("Color :"+listvec.get(position).getColor());
         holder.constraintLayoutC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +62,7 @@ public class MyAdapterVec extends RecyclerView.Adapter<MyAdapterVec.MyViewHolder
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             titre = itemView.findViewById(R.id.cmndnom2);
+            textView4 = itemView.findViewById(R.id.textView15);
             constraintLayoutC = itemView.findViewById(R.id.constraintlayoutc2);     }
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degra"
+    android:background="@drawable/hallo"
     tools:context=".MainActivity">
 
     <Button
@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
 
         android:layout_marginBottom="92dp"
-        android:backgroundTint="@color/material_on_primary_disabled"
+        android:backgroundTint="#FF9D0E"
+        android:fontFamily="@font/roboto_medium_italic"
         android:text="Sign Up"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -33,7 +34,8 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/material_on_primary_disabled"
+        android:backgroundTint="#FF9D0E"
+        android:fontFamily="@font/roboto_medium_italic"
         android:text="Login"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -50,14 +52,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp"
         android:layout_marginBottom="24dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:shadowColor="#716E6E"
+        android:fontFamily="@font/roboto_medium_italic"
         android:shadowRadius="70"
 
         android:text="WELCOME"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="70sp"
+        android:textSize="60sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

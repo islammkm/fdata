@@ -8,6 +8,12 @@ public class Livreur {
     public Livreur() {
     }
 
+    public Livreur(int id,String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.id = id;
+    }
+
     public Livreur(String nom, String RM, String NM, String password, String username) {
         this.nom = nom;
         this.RM = RM;

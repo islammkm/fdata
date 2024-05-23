@@ -33,6 +33,7 @@ public class Util {
     public static final String KEY_FOURNISSEUR_ID = "fournisseur_id";
 
     public static final String TABLE_PATH = "path";
+    public static final String TABLE_PATH2 = "path2";
 
     public static final String KEY_ID_PATH = "id_path";
     public static final String KEY_PATH_ID = "path_id";
@@ -72,9 +73,34 @@ public class Util {
     //Path
     public static final String KEY_ADRESS_P = "adress";
     public static final String KEY_DATE_P = "date"; // اسم العمود الجديد
+    public static final String KEY_CITY = "city";
+    public static final String KEY_PRIX = "prix";
+    public static final String KEY_PHOTO = "photo";
+    public static final String KEY_SITE = "site";
+    public static final String KEY_LAST_UPDATE = "lastUpdate";
 
+    public static final  String KEY_IMAGE = "image";
+    public static final  String KEY_ID_PIC = "id_pic";
+    public static final  String KEY_NAME ="name";
+    public static final  String TABLE_PIC ="pic";
+    public static final  String EMAIL = "pfecolieeee@gmail.com";
+    public static final String PASSWORD = "islamislam";
 
+    public static final String KEY_CITY_CLIENT = "city_client";
+    public static final String KEY_CITY_FOURNISSEUR = "city_fournisseur";
+    public static final String KEY_DATE_CMND = "date_cmnd";
+    public static final String KEY_NOM_CMND = "nom_cmnd";
+    public static final String TABLE_CMND_DETAILS = "info";
 
+    public static final String CREATE_TABLE_CMND_DETAILS = "CREATE TABLE " + TABLE_CMND_DETAILS + "("
+            + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + KEY_CITY_CLIENT + " TEXT,"
+            + KEY_CITY_FOURNISSEUR + " TEXT,"
+            + KEY_SITE + " TEXT,"
+            + KEY_DATE_CMND + " TEXT,"
+            + KEY_NOM_CMND + " TEXT,"
+            + KEY_CMND_ID + " INTEGER"
+            + ")";
     public static final String CREATE_TABLE_LIVREUR = "CREATE TABLE " + TABLE_LIVREUR + "("
             + KEY_ID_LIVREUR + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + KEY_USERNAME + " TEXT,"
@@ -104,9 +130,11 @@ public class Util {
             + KEY_ETAT + " TEXT,"
             + KEY_COTE_CMND + " INTEGER,"
             + KEY_NPHONE + " INTEGER,"
+
             + "FOREIGN KEY(" + KEY_USER_ID + ") REFERENCES " + TABLE_USERS + "(" + KEY_ID_USER + "),"
             + "FOREIGN KEY(" + KEY_LIVREUR_ID + ") REFERENCES " + TABLE_LIVREUR + "(" + KEY_ID_LIVREUR + ")"
             + ")";
+
     public static final String CREATE_TABLE_COLIE = "CREATE TABLE " + TABLE_COLIE + "("
             + KEY_ID_COLIE + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + KEY_CMND_ID + " INTEGER,"
@@ -118,10 +146,12 @@ public class Util {
             + KEY_CODE + " TEXT,"
             + KEY_COTE_COLIE + " INTEGER,"
             + KEY_POIDS + " INTEGER,"
+
             + "FOREIGN KEY(" + KEY_CMND_ID + ") REFERENCES " + TABLE_CMND + "(" + KEY_ID_CMND + "),"
             + "FOREIGN KEY(" + KEY_ID_PATH + ") REFERENCES " + TABLE_PATH + "(" + KEY_ID_PATH + "),"
             + "FOREIGN KEY(" + KEY_ID_FOURNISSEUR + ") REFERENCES " + TABLE_FOURNISSEUR + "(" + KEY_ID_FOURNISSEUR + ")"
-            + ")";
+            + ")"
+            ;
 
     public static final String CREATE_TABLE_FOURNISSEUR = "CREATE TABLE IF NOT EXISTS " + TABLE_FOURNISSEUR + "("
             + KEY_ID_FOURNISSEUR + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -133,9 +163,11 @@ public class Util {
             + KEY_ADRESS_P + " TEXT,"
             + KEY_DATE_P + " TEXT" // إضافة العمود الجديد
             + ")";
+    public static final String CREATE_TABLE_PIC = "CREATE TABLE IF NOT EXISTS " + TABLE_PIC + "("
+            + KEY_ID_PIC + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + KEY_NAME + " TEXT,"
+            + KEY_IMAGE + " blob" // إضافة العمود الجديد
+            + ")";
 
-
-    public static final  String EMAIL = "pfecolieeee@gmail.com";
-    public static final String PASSWORD = "islamislam";
 }
 

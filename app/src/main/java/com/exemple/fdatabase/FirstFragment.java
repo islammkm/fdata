@@ -17,13 +17,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.exemple.fdatabase.controler.MyAdapterDipo;
 import com.exemple.fdatabase.controler.MyDatabaseHalper;
+import com.exemple.fdatabase.models.Fourniseur;
 import com.exemple.fdatabase.models.Path;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -41,7 +44,7 @@ public class FirstFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    List<Path> listdipo = new ArrayList<>();
+    List<Fourniseur> listdipo = new ArrayList<>();
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private boolean select=false;
@@ -87,7 +90,19 @@ public class FirstFragment extends Fragment {
         Switch switch1 = view.findViewById(R.id.switch1);
         Button btn3 = view.findViewById(R.id.btn3);
         TextView txt = view.findViewById(R.id.textView4);
+        switch1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(switch1.isChecked()){
+                    btn3.setVisibility(View.INVISIBLE);
+                    select = false ;
 
+                }else {
+                    btn3.setVisibility(View.VISIBLE);
+
+                }
+            }
+        });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,15 +112,15 @@ public class FirstFragment extends Fragment {
                 final AlertDialog dialog = builder.create();
                 dialog.setCancelable(false);
                 dialog.show();
+                btn3.setVisibility(View.INVISIBLE);
                 recyclerView = myview.findViewById(R.id.recycleview30);
                 recyclerView.setHasFixedSize(true);
                 layoutManager = new LinearLayoutManager(getContext());
                 recyclerView.setLayoutManager(layoutManager);
                 MyDatabaseHalper db = new MyDatabaseHalper(getContext());
-                listdipo = db.getAllPaths();
+                listdipo = db.getAllFournisseurs();
                 myAdapter = new MyAdapterDipo(listdipo,getContext(),txt,dialog);
                 recyclerView.setAdapter(myAdapter);
-                selectedItem = txt.getText().toString();
                 select = true ;
             }
         });
@@ -114,7 +129,9 @@ public class FirstFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext() , Scanner.class);
                 intent.putExtra("select",select);
+                selectedItem = txt.getText().toString();
                 intent.putExtra("selectitem",selectedItem);
+                Toast.makeText(getContext(), " " +selectedItem, Toast.LENGTH_SHORT).show();
 
                 startActivity(intent);
             }

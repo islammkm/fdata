@@ -40,8 +40,10 @@ public class MyAdapterColie2 extends RecyclerView.Adapter<MyAdapterColie2.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.titre.setText(listclient.get(position).getCode());
-        holder.etat.setText(listclient.get(position).getDate());
-        holder.date.setText(String.valueOf(listclient.get(position).getLast_position()));
+        MyDatabaseHalper db = new MyDatabaseHalper(context);
+        holder.etat.setText("last update :"+listclient.get(position).getDate());
+        holder.date.setText(String.valueOf(db.getFournisseurById(listclient.get(position).getFournisseurId()).getNom()));
+        holder.date.setVisibility(View.INVISIBLE);
         holder.constraintLayoutC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

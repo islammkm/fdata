@@ -4,7 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:visibility="visible"
+    tools:context=".Scanner"
+    android:background="#9FFF9D0E">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/ttablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectongle3"
+            app:tabIndicatorColor="#686868"
+            app:tabSelectedTextColor="#FF0368">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="EM" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="liv" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab3"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fournisseur" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="usine" />
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <FrameLayout
+            android:id="@+id/tramelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+        </FrameLayout>
+    </LinearLayout>
 
 
 

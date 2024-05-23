@@ -1,10 +1,42 @@
 package com.exemple.fdatabase.models;
 
 public class Cmd {
-    private String adresse ,etat ;
-    private int cote , Nphone,userid,LivreurId;
+    private String adresse ,etat,fournisseur ,site , nome , date;
+    private int cote,Nphone,userid,LivreurId;
     private int id;
     public Cmd() {
+    }
+
+    public String getFournisseur() {
+        return fournisseur;
+    }
+
+    public void setFournisseur(String fournisseur) {
+        this.fournisseur = fournisseur;
+    }
+
+    public String getSite() {
+        return site;
+    }
+
+    public void setSite(String site) {
+        this.site = site;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public Cmd(String adresse, String etat, int cote, int nphone) {

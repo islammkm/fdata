@@ -7,6 +7,12 @@ public class Fourniseur {
     public Fourniseur() {
     }
 
+    public Fourniseur(String nom, String adresse, int id) {
+        Nom = nom;
+        this.adresse = adresse;
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

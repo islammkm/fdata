@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
-    android:background="@drawable/degra">
+    android:background="@drawable/hallo">
 
     <TextView
+        android:id="@+id/signUpText22"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/signUpText22"
 
+        android:fontFamily="@font/roboto_medium_italic"
         android:gravity="center"
         android:text="Login"
         android:textColor="#582900"
-        android:fontFamily="cursive"
-        android:textSize="80sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -51,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/userr"
                 android:drawableRight="@drawable/us"
+                android:fontFamily="@font/roboto_medium_italic"
                 android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -63,6 +64,7 @@
             android:layout_margin="10dp"
             android:gravity="center|left"
             android:hint="Password"
+            app:passwordToggleEnabled="true"
             android:textSize="16sp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -70,6 +72,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/userr"
+                android:fontFamily="@font/roboto_medium_italic"
+                android:inputType="textPassword"
+
                 android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -82,10 +87,11 @@
             android:layout_margin="10dp"
             android:layout_marginRight="100dp"
             android:backgroundTint="#FF9D0E"
+            android:fontFamily="@font/roboto_medium_italic"
             android:gravity="center"
             android:text="Login"
-            android:textSize="16sp"
 
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.589"
@@ -121,11 +127,11 @@
         android:id="@+id/signUpText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/roboto_medium_italic"
         android:gravity="center"
-        android:text="Create a new account?SignUp "
+        android:text="Create a new account ?   SignUp "
         android:textColor="#582900"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

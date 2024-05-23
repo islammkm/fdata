@@ -11,18 +11,19 @@ package com.exemple.fdatabase.controler;
         import androidx.recyclerview.widget.RecyclerView;
 
         import com.exemple.fdatabase.R;
+        import com.exemple.fdatabase.models.Fourniseur;
         import com.exemple.fdatabase.models.Path;
 
         import java.util.List;
 
 
 public class MyAdapterDipo extends RecyclerView.Adapter<MyAdapterDipo.MyViewHolder> {
-    List<Path> listdipo;
+    List<Fourniseur> listdipo;
     Context context;
     TextView textView;
     AlertDialog dialog;
 
-    public MyAdapterDipo(List<Path> listdipo, Context context, TextView textView, AlertDialog dialog) {
+    public MyAdapterDipo(List<Fourniseur> listdipo, Context context, TextView textView, AlertDialog dialog) {
         this.listdipo = listdipo;
         this.context = context;
         this.textView = textView;
@@ -41,11 +42,11 @@ public class MyAdapterDipo extends RecyclerView.Adapter<MyAdapterDipo.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.titre.setText(listdipo.get(position).getAddress());
+        holder.titre.setText(listdipo.get(position).getAdresse());
         holder.constraintLayoutC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText(listdipo.get(position).getAddress());
+                textView.setText(listdipo.get(position).getAdresse());
                 dialog.dismiss();
             }
         });

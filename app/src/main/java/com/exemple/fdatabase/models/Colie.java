@@ -1,8 +1,31 @@
 package com.exemple.fdatabase.models;
 
 public class Colie {
-    private String date , type , last_position , code,LastPosition;
-    private int cote , poids ,id,CmndId , FournisseurId;
+    private String date , type , last_position , code,LastPosition , city , etat , prix ,  nome, photo;
+    private int cote;
+    private int poids;
+    private int id;
+    private int CmndId;
+    private int FournisseurId;
+    private int IdPath;
+
+    public int getIdPath() {
+        return IdPath;
+    }
+
+    public void setIdPath(int idPath) {
+        IdPath = idPath;
+    }
+
+    public int getIdfournisseur() {
+        return idfournisseur;
+    }
+
+    public void setIdfournisseur(int idfournisseur) {
+        this.idfournisseur = idfournisseur;
+    }
+
+    private int idfournisseur;
 
     public Colie(int anInt, int cursorInt, int i, int anInt1, String date, String type, String last_position, String code, int cote, int poids) {
         this.date = date;
@@ -42,6 +65,46 @@ public class Colie {
 
     public int getId() {
         return id;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+
+    public String getPrix() {
+        return prix;
+    }
+
+    public void setPrix(String prix) {
+        this.prix = prix;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public void setId(int id) {

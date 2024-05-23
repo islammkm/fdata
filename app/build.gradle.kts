@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -35,11 +36,19 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-database:21.0.0")
+    implementation("com.google.firebase:firebase-firestore:25.0.0")
     val fragment_version = "1.6.1"
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.google.maps.android:android-maps-utils:0.4+")
+
+
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 
     implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation ("com.google.android.gms:play-services-location:21.2.0")

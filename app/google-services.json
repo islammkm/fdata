@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "398407888243",
+    "project_id": "fdata-41a5d",
+    "storage_bucket": "fdata-41a5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398407888243:android:3aaf6dfee0f236d24d6906",
+        "android_client_info": {
+          "package_name": "com.exemple.fdatabase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-GpCxgogwuToy0LsMjgj7JAWt-T2dRGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
